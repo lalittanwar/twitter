@@ -54,19 +54,18 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     
-    this.ls.getlist()
-    .subscribe(data=>{
-      this.list=data;
+    this.list=this.ls.getlist()
+    
       console.log(this.list);
       this.dataSource=new MatTableDataSource(this.list);
 
       this.dataSource.sort=this.sort;
       this.dataSource.paginator=this.paginator;    
       this.dataSource.sort=this.sort;
-    });
+    }
     
 
-    }
+    
 
 
   applyfilter(fvalue:string){
